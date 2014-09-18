@@ -33,7 +33,7 @@ angular.module('ngElasticInput', []).directive('elasticInput', function(){
 
             function update() {
                 mirror.text(element.val());
-                element.css('width', mirror.outerWidth());
+                element.css('width', mirror.outerWidth() + 1);
             }
 
         }
