@@ -12,7 +12,8 @@ angular.module('ngElasticInput', []).directive('elasticInput', function(){
         restrict: 'A',
         link: function postLink(scope, element, attrs) {
 
-            var mirror = jQuery('<span style="position:fixed; top:-999px; left:0; white-space:pre;"></span>');
+            var wrapper = jQuery('<div style="position:fixed; top:-999px; left:0;"></div>');
+            var mirror = jQuery('<span style="white-space:pre;"></span>');
 
             element.css('minWidth', scope.$eval(attrs.elasticInputMinwidth) || 50);
             element.css('maxWidth', scope.$eval(attrs.elasticInputMaxwidth) || 250);
@@ -25,7 +26,7 @@ angular.module('ngElasticInput', []).directive('elasticInput', function(){
                 mirror.css(val, element.css(val));
             });
 
-            jQuery('body').append(mirror);
+            jQuery('body').append(wrapper.append(mirror));
 
             update();
 
