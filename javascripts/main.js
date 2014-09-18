@@ -1,1 +1,6 @@
-console.log('This would be the main JS file.');
+
+angular.module('elasticInputApp', ['ngElasticInput']).controller('AppController', ['$scope', function($scope) {
+
+
+}]);
+
