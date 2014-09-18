@@ -29,14 +29,14 @@ angular.module('ngElasticInput', []).directive('elasticInput', function(){
 
             jQuery('body').append(wrapper.append(mirror));
 
-            update();
-
-            element.on("keydown keyup focus input propertychange change", function(){ update(); });
-
             function update() {
                 mirror.text(element.val());
                 element.css('width', mirror.outerWidth() + 1);
             }
+
+            update();
+
+            element.on('keydown keyup focus input propertychange change', function(){ update(); });
 
         }
     };
