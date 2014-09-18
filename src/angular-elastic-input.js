@@ -12,9 +12,29 @@ angular.module('ngElasticInput', []).directive('elasticInput', function(){
         restrict: 'A',
         link: function postLink(scope, element, attrs) {
 
+            var mirror = jQuery('<span style="position:fixed; top:-999px; left:0;"></span>');
 
+            element.css('minWidth', scope.$eval(attrs.elasticInputMinwidth) || 50);
+            element.css('maxWidth', scope.$eval(attrs.elasticInputMaxwidth) || 250);
 
+            jQuery.each([
+                'fontFamily', 'fontSize', 'fontWeight', 'fontStyle',
+                'letterSpacing', 'textTransform', 'wordSpacing', 'textIndent',
+                'boxSizing', 'borderRightWidth', 'borderLeftWidth', 'borderLeftStyle', 'borderRightStyle',
+                'paddingLeft', 'paddingRight', 'marginLeft', 'marginRight'], function(i,val){
+                mirror.css(val, element.css(val));
+            });
 
+            jQuery('body').append(mirror);
+
+            update();
+
+            element.on("keydown keyup focus input propertychange change", function(){ update(); });
+
+            function update() {
+                mirror.text(element.val());
+                element.css('width', mirror.outerWidth());
+            }
 
         }
     };
