@@ -16,8 +16,9 @@ angular.module('ngElasticInput', []).directive('elasticInput', function(){
             var wrapper = angular.element('<div style="position:fixed; top:-999px; left:0;"></div>');
             var mirror = angular.element('<span style="white-space:pre;"></span>');
 
-            element.css('minWidth', scope.$eval(attrs.elasticInputMinwidth) || 50);
-            element.css('maxWidth', scope.$eval(attrs.elasticInputMaxwidth) || 250);
+            var defaultMaxwidth = element.css('maxWidth') === 'none' ? element.parent().innerWidth() : element.css('maxWidth');
+            element.css('minWidth', attrs.elasticInputMinwidth || element.css('minWidth'));
+            element.css('maxWidth', attrs.elasticInputMaxwidth || defaultMaxwidth);
 
             angular.forEach(['fontFamily', 'fontSize', 'fontWeight', 'fontStyle',
                 'letterSpacing', 'textTransform', 'wordSpacing', 'textIndent',

@@ -10,11 +10,12 @@ angular.module('ngElasticInput', []).directive('elasticInput', function () {
   return {
     restrict: 'A',
     link: function postLink(scope, element, attrs) {
-      var wrapper = jQuery('<div style="position:fixed; top:-999px; left:0;"></div>');
-      var mirror = jQuery('<span style="white-space:pre;"></span>');
-      element.css('minWidth', scope.$eval(attrs.elasticInputMinwidth) || 50);
-      element.css('maxWidth', scope.$eval(attrs.elasticInputMaxwidth) || 250);
-      jQuery.each([
+      var wrapper = angular.element('<div style="position:fixed; top:-999px; left:0;"></div>');
+      var mirror = angular.element('<span style="white-space:pre;"></span>');
+      var defaultMaxwidth = element.css('maxWidth') === 'none' ? element.parent().innerWidth() : element.css('maxWidth');
+      element.css('minWidth', attrs.elasticInputMinwidth || element.css('minWidth'));
+      element.css('maxWidth', attrs.elasticInputMaxwidth || defaultMaxwidth);
+      angular.forEach([
         'fontFamily',
         'fontSize',
         'fontWeight',
@@ -32,18 +33,18 @@ angular.module('ngElasticInput', []).directive('elasticInput', function () {
         'paddingRight',
         'marginLeft',
         'marginRight'
-      ], function (i, val) {
-        mirror.css(val, element.css(val));
+      ], function (value) {
+        mirror.css(value, element.css(value));
       });
-      jQuery('body').append(wrapper.append(mirror));
-      update();
-      element.on('keydown keyup focus input propertychange change', function () {
-        update();
-      });
+      angular.element('body').append(wrapper.append(mirror));
       function update() {
         mirror.text(element.val());
         element.css('width', mirror.outerWidth() + 1);
       }
+      update();
+      element.on('keydown keyup focus input propertychange change', function () {
+        update();
+      });
     }
   };
 });
