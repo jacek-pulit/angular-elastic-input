@@ -32,6 +32,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer" ng-app="elasticInputApp">
       <section id="main_content" class="inner" ng-controller="AppController">
+
         <h3>Installation:</h3>
         <p>Include the script tag on your page after the jQuery and AngularJS script tags</p>
         <p>Ensure that your application module specifies <code>ngElasticInput</code> as a dependency</p>
@@ -41,6 +42,24 @@
 
         <h3>Demo:</h3>
         <p><input class="form-control" type="text" elastic-input/></p>
+
+        <h3>Options:</h3>
+        <p>Minimum and maximum width you can specify as css properties: <code>min-width</code> and <code>max-width</code></p>
+        <pre><code>&lt;input type=&quot;text&quot; elastic-input <br/>&nbsp; &nbsp; &nbsp; &nbsp;style=&quot;min-width: 200px; max-width: 400px;&quot;/&gt;</code></pre>
+        <p> Example:
+            <input class="form-control" type="text" style="min-width:200px;max-width:400px;" elastic-input/>
+        </p>
+        <p>or as element attributes: <code>elastic-input-minwidth</code> and <code>elastic-input-maxwidth</code></p>
+        <pre><code>&lt;input type=&quot;text&quot; elastic-input <br/>&nbsp; &nbsp; &nbsp; &nbsp;elastic-input-minwidth=&quot;300px&quot; elastic-input-maxwidth=&quot;none&quot;/&gt;</code></pre>
+        <p> Example:
+            <input class="form-control" type="text" elastic-input-minwidth="300px" elastic-input-maxwidth="none" elastic-input/>
+        </p>
+        <h4>Defaults:</h4>
+        <p><code>min-width</code>: 0</p>
+        <p><code>max-width</code>: inner width of parent element</p>
+
+        <h3>License:</h3>
+        <p>Angular Elastic Input is licensed under the MIT license. See the LICENSE file for more details.</p>
 
       </section>
     </div>
