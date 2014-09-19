@@ -1,0 +1,17 @@
+{
+    "name": "angular-elastic-input",
+    "version": "1.0.0",
+    "main": "dist/angular-elastic-input.min.js",
+    "keywords": ["elastic input", "autosize input", "autogrow input"],
+    "ignore": [
+        ".jshintrc",
+        "Gruntfile.js",
+        "node_modules",
+        "tasks",
+        "config"
+    ],
+    "dependencies": {
+        "jquery": ">=1.6.0",
+        "angular": ">=1.0.6"
+    }
+}
