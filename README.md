@@ -6,25 +6,21 @@ A directive for AngularJS which automatically resizes the width of input field a
 ## Installation
 
 1. Download archive file above or install using bower:
-
 ```
 bower install angular-elastic-input --save
 ```
 
 2. Include the script tag on your page after the jQuery and AngularJS script tags:
-
 ```html
 <script src="path/to/angular-elastic-input.min.js"></script>
 ```
 
 3. Ensure that your application module specifies ngElasticInput as a dependency:
-
 ```javascript
 angular.module('myApp', ['ngElasticInput']);
 ```
 
 4. Use the directive by specifying an elastic-input attribute on an input element:
-
 ```html
 <input type="text" elastic-input/>
 ```
