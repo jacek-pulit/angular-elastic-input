@@ -36,10 +36,13 @@
       <section id="main_content" class="inner" ng-controller="AppController">
 
         <h3>Installation:</h3>
-        <p>Include the script tag on your page after the jQuery and AngularJS script tags</p>
-        <p>Ensure that your application module specifies <code>ngElasticInput</code> as a dependency</p>
+        <p>1. Download archive file above or install using bower:</p>
+        <pre><code>bower install angular-elastic-input --save</code></pre>
+        <p>2. Include the script tag on your page after the jQuery and AngularJS script tags:</p>
+        <pre><code>&lt;script src=&quot;path/to/angular-elastic-input.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <p>3. Ensure that your application module specifies <code>ngElasticInput</code> as a dependency:</p>
         <pre><code>angular.module('myApp', ['ngElasticInput']);</code></pre>
-        <p>Use the directive by specifying an <code>elastic-input</code> attribute on an input element.</p>
+        <p>4. Use the directive by specifying an <code>elastic-input</code> attribute on an input element:</p>
         <pre><code>&lt;input type=&quot;text&quot; elastic-input/&gt;</code></pre>
 
         <h3>Demo:</h3>
@@ -70,7 +73,7 @@
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         <p class="copyright">Angular Elastic Input maintained by <a href="https://github.com/jacek-pulit">Jacek Pulit</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p class="info">Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
 

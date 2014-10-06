@@ -318,7 +318,7 @@ Full-Width Styles
   width: 210px;
   z-index: 10;
   bottom: -40px;
-  right: 80px;
+  right: 85px;
   height: 70px;
   background: url('../images/icon_download.png') no-repeat 0% 90%;
 }
@@ -328,7 +328,7 @@ Full-Width Styles
   width: 70px;
   z-index: 10;
   bottom: -45px;
-  right: 0;
+  right: 5px;
   height: 70px;
 }
 
@@ -375,7 +375,21 @@ Full-Width Styles
   background: #212121;
 }
 
+#footer_wrap .copyright {
+    float: left;
+    margin: 0;
+}
 
+#footer_wrap .info {
+    float: right;
+    margin: 0;
+}
+
+#footer_wrap .inner:after {
+    display: block;
+    content: "";
+    clear: both;
+}
 
 /*******************************************************************************
 Small Device Styles
@@ -388,6 +402,11 @@ Small Device Styles
 
   #downloads {
     display: none;
+  }
+
+  #facebook-like-button {
+      right: 50%;
+      margin-right: -35px;
   }
 
   .inner {
