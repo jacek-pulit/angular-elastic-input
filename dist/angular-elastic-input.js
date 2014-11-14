@@ -1,7 +1,7 @@
 /**
  * angular-elastic-input
  * A directive for AngularJS which automatically resizes the width of input field according to the content, while typing.
- * @version: 1.0.0
+ * @version: 1.0.1
  * @author: Jacek Pulit <jacek.pulit@gmail.com>
  * @license: MIT License
  */
@@ -9,6 +9,7 @@
 angular.module('ngElasticInput', []).directive('elasticInput', function () {
   return {
     restrict: 'A',
+    scope: { model: '=ngModel' },
     link: function postLink(scope, element, attrs) {
       var wrapper = angular.element('<div style="position:fixed; top:-999px; left:0;"></div>');
       var mirror = angular.element('<span style="white-space:pre;"></span>');
@@ -42,9 +43,15 @@ angular.module('ngElasticInput', []).directive('elasticInput', function () {
         element.css('width', mirror.outerWidth() + 1);
       }
       update();
-      element.on('keydown keyup focus input propertychange change', function () {
-        update();
-      });
+      if (scope.model) {
+        scope.$watch('model', function () {
+          update();
+        });
+      } else {
+        element.on('keydown keyup focus input propertychange change', function () {
+          update();
+        });
+      }
     }
   };
 });
