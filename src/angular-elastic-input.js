@@ -39,7 +39,7 @@ angular.module('ngElasticInput', []).directive('elasticInput', function(){
 
             update();
 
-            if (scope.model) {
+            if (attrs.ngModel) {
                 scope.$watch('model', function () {  update(); });
             }
             else {

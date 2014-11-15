@@ -43,7 +43,7 @@ angular.module('ngElasticInput', []).directive('elasticInput', function () {
         element.css('width', mirror.outerWidth() + 1);
       }
       update();
-      if (scope.model) {
+      if (attrs.ngModel) {
         scope.$watch('model', function () {
           update();
         });
