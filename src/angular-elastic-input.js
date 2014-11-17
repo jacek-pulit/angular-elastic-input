@@ -1,14 +1,14 @@
 /**
  * angular-elastic-input
  * A directive for AngularJS which automatically resizes the width of input field according to the content, while typing.
- * @version: 1.0.1
+ * @version: 2.0.0
  * @author: Jacek Pulit <jacek.pulit@gmail.com>
  * @license: MIT License
  */
 
 'use strict';
 
-angular.module('ngElasticInput', []).directive('elasticInput', function(){
+angular.module('puElasticInput', []).directive('elasticInput', function(){
     return {
         restrict: 'A',
         scope: {

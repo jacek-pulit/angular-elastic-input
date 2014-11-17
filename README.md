@@ -15,9 +15,9 @@ Include the script tag on your page after the jQuery and AngularJS script tags:
 <script src="path/to/angular-elastic-input.min.js"></script>
 ```
 
-Ensure that your application module specifies ngElasticInput as a dependency:
+Ensure that your application module specifies puElasticInput as a dependency:
 ```javascript
-angular.module('myApp', ['ngElasticInput']);
+angular.module('myApp', ['puElasticInput']);
 ```
 
 Use the directive by specifying an elastic-input attribute on an input element:
