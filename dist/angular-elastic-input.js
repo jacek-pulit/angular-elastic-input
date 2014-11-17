@@ -6,7 +6,7 @@
  * @license: MIT License
  */
 'use strict';
-angular.module('puElasticInput', []).directive('elasticInput', function () {
+angular.module('puElasticInput', []).directive('puElasticInput', function () {
   return {
     restrict: 'A',
     scope: { model: '=ngModel' },
@@ -14,8 +14,8 @@ angular.module('puElasticInput', []).directive('elasticInput', function () {
       var wrapper = angular.element('<div style="position:fixed; top:-999px; left:0;"></div>');
       var mirror = angular.element('<span style="white-space:pre;"></span>');
       var defaultMaxwidth = element.css('maxWidth') === 'none' ? element.parent().innerWidth() : element.css('maxWidth');
-      element.css('minWidth', attrs.elasticInputMinwidth || element.css('minWidth'));
-      element.css('maxWidth', attrs.elasticInputMaxwidth || defaultMaxwidth);
+      element.css('minWidth', attrs.puElasticInputMinwidth || element.css('minWidth'));
+      element.css('maxWidth', attrs.puElasticInputMaxwidth || defaultMaxwidth);
       angular.forEach([
         'fontFamily',
         'fontSize',

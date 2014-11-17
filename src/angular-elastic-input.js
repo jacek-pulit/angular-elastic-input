@@ -8,7 +8,7 @@
 
 'use strict';
 
-angular.module('puElasticInput', []).directive('elasticInput', function(){
+angular.module('puElasticInput', []).directive('puElasticInput', function(){
     return {
         restrict: 'A',
         scope: {
@@ -20,8 +20,8 @@ angular.module('puElasticInput', []).directive('elasticInput', function(){
             var mirror = angular.element('<span style="white-space:pre;"></span>');
 
             var defaultMaxwidth = element.css('maxWidth') === 'none' ? element.parent().innerWidth() : element.css('maxWidth');
-            element.css('minWidth', attrs.elasticInputMinwidth || element.css('minWidth'));
-            element.css('maxWidth', attrs.elasticInputMaxwidth || defaultMaxwidth);
+            element.css('minWidth', attrs.puElasticInputMinwidth || element.css('minWidth'));
+            element.css('maxWidth', attrs.puElasticInputMaxwidth || defaultMaxwidth);
 
             angular.forEach(['fontFamily', 'fontSize', 'fontWeight', 'fontStyle',
                 'letterSpacing', 'textTransform', 'wordSpacing', 'textIndent',
