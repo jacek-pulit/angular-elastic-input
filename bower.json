@@ -1,6 +1,6 @@
 {
     "name": "angular-elastic-input",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "dist/angular-elastic-input.min.js",
     "keywords": ["elastic input", "autosize input", "autogrow input"],
     "ignore": [
