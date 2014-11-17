@@ -42,22 +42,22 @@
         <pre><code>&lt;script src=&quot;path/to/angular-elastic-input.min.js&quot;&gt;&lt;/script&gt;</code></pre>
         <p>3. Ensure that your application module specifies <code>puElasticInput</code> as a dependency:</p>
         <pre><code>angular.module('myApp', ['puElasticInput']);</code></pre>
-        <p>4. Use the directive by specifying an <code>elastic-input</code> attribute on an input element:</p>
-        <pre><code>&lt;input type=&quot;text&quot; elastic-input/&gt;</code></pre>
+        <p>4. Use the directive by specifying an <code>pu-elastic-input</code> attribute on an input element:</p>
+        <pre><code>&lt;input type=&quot;text&quot; pu-elastic-input/&gt;</code></pre>
 
         <h3>Demo:</h3>
-        <p><input class="form-control" type="text" elastic-input/></p>
+        <p><input class="form-control" type="text" pu-elastic-input/></p>
 
         <h3>Options:</h3>
         <p>Minimum and maximum width you can specify as css properties: <code>min-width</code> and <code>max-width</code></p>
-        <pre><code>&lt;input type=&quot;text&quot; elastic-input <br/>&nbsp; &nbsp; &nbsp; &nbsp;style=&quot;min-width: 200px; max-width: 400px;&quot;/&gt;</code></pre>
+        <pre><code>&lt;input type=&quot;text&quot; pu-elastic-input <br/>&nbsp; &nbsp; &nbsp; &nbsp;style=&quot;min-width: 200px; max-width: 400px;&quot;/&gt;</code></pre>
         <p> Example:
-            <input class="form-control" type="text" style="min-width:200px;max-width:400px;" elastic-input/>
+            <input class="form-control" type="text" style="min-width:200px;max-width:400px;" pu-elastic-input/>
         </p>
-        <p>or as element attributes: <code>elastic-input-minwidth</code> and <code>elastic-input-maxwidth</code></p>
-        <pre><code>&lt;input type=&quot;text&quot; elastic-input <br/>&nbsp; &nbsp; &nbsp; &nbsp;elastic-input-minwidth=&quot;300px&quot; elastic-input-maxwidth=&quot;none&quot;/&gt;</code></pre>
+        <p>or as element attributes: <code>pu-elastic-input-minwidth</code> and <code>pu-elastic-input-maxwidth</code></p>
+        <pre><code>&lt;input type=&quot;text&quot; pu-elastic-input <br/>&nbsp; &nbsp; &nbsp; &nbsp;pu-elastic-input-minwidth=&quot;300px&quot; pu-elastic-input-maxwidth=&quot;none&quot;/&gt;</code></pre>
         <p> Example:
-            <input class="form-control" type="text" elastic-input-minwidth="300px" elastic-input-maxwidth="none" elastic-input/>
+            <input class="form-control" type="text" pu-elastic-input-minwidth="300px" pu-elastic-input-maxwidth="none" pu-elastic-input/>
         </p>
         <h4>Defaults:</h4>
         <p><code>min-width</code>: 0</p>
