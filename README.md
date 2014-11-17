@@ -20,9 +20,9 @@ Ensure that your application module specifies puElasticInput as a dependency:
 angular.module('myApp', ['puElasticInput']);
 ```
 
-Use the directive by specifying an elastic-input attribute on an input element:
+Use the directive by specifying an pu-elastic-input attribute on an input element:
 ```html
-<input type="text" elastic-input/>
+<input type="text" pu-elastic-input/>
 ```
 
 ## Demo
@@ -36,13 +36,13 @@ Visit http://jacek-pulit.github.io/angular-elastic-input/
 Minimum and maximum width you can specify as css properties: min-width and max-width
 
 ```html
-<input type="text" elastic-input style="min-width: 200px; max-width: 400px;"/>
+<input type="text" pu-elastic-input style="min-width: 200px; max-width: 400px;"/>
 ```
 
-or as element attributes: elastic-input-minwidth and elastic-input-maxwidth
+or as element attributes: pu-elastic-input-minwidth and pu-elastic-input-maxwidth
 
 ```html
-<input type="text" elastic-input elastic-input-minwidth="300px" elastic-input-maxwidth="none"/>
+<input type="text" pu-elastic-input pu-elastic-input-minwidth="300px" pu-elastic-input-maxwidth="none"/>
 ```
 ### Defaults
 
