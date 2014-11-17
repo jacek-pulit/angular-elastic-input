@@ -1,5 +1,5 @@
 
-angular.module('elasticInputApp', ['ngElasticInput']).controller('AppController', ['$scope', function($scope) {
+angular.module('elasticInputApp', ['puElasticInput']).controller('AppController', ['$scope', function($scope) {
 
 
 }]);
