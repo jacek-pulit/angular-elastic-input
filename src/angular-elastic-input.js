@@ -33,7 +33,7 @@ angular.module('puElasticInput', []).directive('puElasticInput', function(){
             angular.element('body').append(wrapper.append(mirror));
 
             function update() {
-                mirror.text(element.val());
+                mirror.text(element.val() || element.attr("placeholder"));
                 element.css('width', mirror.outerWidth() + 1);
             }
 
