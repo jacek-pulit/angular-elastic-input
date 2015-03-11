@@ -51,6 +51,9 @@ angular.module('puElasticInput', []).directive('puElasticInput', function () {
           update();
         });
       }
+      scope.$on('$destroy', function() {
+        wrapper.remove();
+      });
     }
   };
 });
