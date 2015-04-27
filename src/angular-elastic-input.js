@@ -15,7 +15,12 @@ angular.module('puElasticInput', []).directive('puElasticInput', function(){
         },
         link: function postLink(scope, element, attrs) {
 
-            var wrapper = angular.element('<div style="position:fixed; top:-999px; left:0;"></div>');
+            var wrapper = angular.element('#pu-elastic-input-wrapper');
+            if (!wrapper.length) {
+              wrapper = angular.element('<div id="pu-elastic-input-wrapper" style="position:fixed; top:-999px; left:0;"></div>');
+              angular.element('body').append(wrapper);
+            }
+
             var mirror = angular.element('<span style="white-space:pre;"></span>');
 
             var defaultMaxwidth = element.css('maxWidth') === 'none' ? element.parent().innerWidth() : element.css('maxWidth');
@@ -29,7 +34,7 @@ angular.module('puElasticInput', []).directive('puElasticInput', function(){
                 mirror.css(value, element.css(value));
             });
 
-            angular.element('body').append(wrapper.append(mirror));
+            wrapper.append(mirror);
 
             function update() {
                 mirror.text(element.val() || attrs.placeholder);
@@ -43,6 +48,10 @@ angular.module('puElasticInput', []).directive('puElasticInput', function(){
             } else {
                 element.on('keydown keyup focus input propertychange change', function(){ update(); });
             }
+
+            scope.$on('$destroy', function() {
+                mirror.remove();
+            });
         }
     };
 });
