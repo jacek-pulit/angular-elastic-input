@@ -43,6 +43,10 @@ angular.module('puElasticInput', []).directive('puElasticInput', function(){
             } else {
                 element.on('keydown keyup focus input propertychange change', function(){ update(); });
             }
+            
+            scope.$on('$destroy', function() {
+                wrapper.remove();
+            });
         }
     };
 });
