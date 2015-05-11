@@ -10,9 +10,6 @@
 angular.module('puElasticInput', []).directive('puElasticInput', function(){
     return {
         restrict: 'A',
-        scope: {
-            model: '=ngModel'
-        },
         link: function postLink(scope, element, attrs) {
 
             var wrapper = angular.element('#pu-elastic-input-wrapper');
@@ -44,7 +41,7 @@ angular.module('puElasticInput', []).directive('puElasticInput', function(){
             update();
 
             if (attrs.ngModel) {
-                scope.$watch('model', function(){ update(); });
+                scope.$watch(attrs.ngModel, function(){ update(); });
             } else {
                 element.on('keydown keyup focus input propertychange change', function(){ update(); });
             }
