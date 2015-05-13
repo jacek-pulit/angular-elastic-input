@@ -43,7 +43,8 @@ angular.module('puElasticInput', []).directive('puElasticInput', function () {
       wrapper.append(mirror);
       function update() {
         mirror.text(element.val() || attrs.placeholder);
-        element.css('width', mirror.outerWidth() + 1);
+        var delta = parseInt(attrs.puElasticInputWidthDelta) || 1;
+        element.css('width', mirror.outerWidth() + delta);
       }
       update();
       if (attrs.ngModel) {
