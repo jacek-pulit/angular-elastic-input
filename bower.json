@@ -24,7 +24,6 @@
         "config"
     ],
     "dependencies": {
-        "jquery": ">=1.6.0",
         "angular": ">=1.0.6"
     }
 }
