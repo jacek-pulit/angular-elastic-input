@@ -1,5 +1,6 @@
 
 module.exports = function (grunt) {
+    'use strict';
 
     grunt.registerTask('build', 'Run all build tasks.', function(bump) {
 
