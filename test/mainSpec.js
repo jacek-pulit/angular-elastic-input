@@ -92,5 +92,14 @@ describe('puElasticInput', function() {
             expect(element[0].clientWidth).toBe(100);
         });
 
+        it('returns to its initial value when input value is cleared', function() {
+            scope.s = 'foobar';
+            var element = compileAndDigest('<input ng-model="s" pu-elastic-input>');
+            var emptyElement = compileAndDigest('<input ng-model="e" pu-elastic-input>');
+            expect(element[0].offsetWidth).toBeGreaterThan(emptyElement[0].offsetWidth);
+            setInputValue(element, '');
+            expect(element[0].offsetWidth).toBe(emptyElement[0].offsetWidth);
+        });
+
     });
 });
