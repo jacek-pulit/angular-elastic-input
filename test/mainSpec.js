@@ -30,6 +30,7 @@ describe('puElasticInput', function() {
         var ctrl = inputElement.controller('ngModel');
         inputElement.val(value);
         ctrl.$setViewValue(value);
+        ctrl.$render();
     }
 
     describe('width', function() {

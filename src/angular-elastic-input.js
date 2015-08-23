@@ -7,17 +7,14 @@
 
 'use strict';
 
-angular.module('puElasticInput', []).directive('puElasticInput', function(){
+angular.module('puElasticInput', []).directive('puElasticInput', ['$document', function($document) {
+
+    var wrapper = angular.element('<div id="pu-elastic-input-wrapper" style="position:fixed; top:-999px; left:0;"></div>');
+    angular.element($document[0].body).append(wrapper);
+
     return {
         restrict: 'A',
         link: function postLink(scope, element, attrs) {
-
-            var wrapper = angular.element('#pu-elastic-input-wrapper');
-            if (!wrapper.length) {
-              wrapper = angular.element('<div id="pu-elastic-input-wrapper" style="position:fixed; top:-999px; left:0;"></div>');
-              angular.element('body').append(wrapper);
-            }
-
             var mirror = angular.element('<span style="white-space:pre;"></span>');
 
             var defaultMaxwidth = element.css('maxWidth') === 'none' ? element.parent().innerWidth() : element.css('maxWidth');
@@ -36,7 +33,7 @@ angular.module('puElasticInput', []).directive('puElasticInput', function(){
             function update() {
                 mirror.text(element.val() || attrs.placeholder);
                 var delta = parseInt(attrs.puElasticInputWidthDelta) || 1;
-                element.css('width', mirror.outerWidth() + delta);
+                element.css('width', mirror.prop('offsetWidth') + delta + 'px');
             }
 
             update();
@@ -52,4 +49,4 @@ angular.module('puElasticInput', []).directive('puElasticInput', function(){
             });
         }
     };
-});
+}]);
