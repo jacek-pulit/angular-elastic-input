@@ -26,9 +26,14 @@
         "grunt-contrib-uglify": "^0.5.0",
         "grunt-contrib-watch": "^0.6.1",
         "grunt-ngmin": "0.0.3",
+        "jasmine-core": "^2.3.4",
         "jshint-stylish": "^0.4.0",
+        "karma": "^0.13.9",
+        "karma-jasmine": "^0.3.6",
+        "karma-phantomjs-launcher": "^0.2.1",
         "load-grunt-configs": "~0.4.0",
         "load-grunt-tasks": "~0.6.0",
+        "phantomjs": "^1.9.18",
         "time-grunt": "~0.4.0"
     }
 }
