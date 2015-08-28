@@ -1,12 +1,13 @@
 describe('puElasticInput', function() {
     'use strict';
 
-    var scope, compileAndDigest, bodyElements;
+    var scope, compileAndDigest, bodyElements, lastChild;
 
     beforeEach(module('puElasticInput'));
 
     beforeEach(inject(function($rootScope, $compile, $document) {
         bodyElements = [];
+        lastChild = $document[0].body.lastChild;
         scope = $rootScope.$new();
         compileAndDigest = function(html) {
             var element = angular.element(html);
@@ -24,6 +25,9 @@ describe('puElasticInput', function() {
         bodyElements.forEach(function(element) {
             element.remove();
         });
+        while (lastChild.nextSibling) {
+            lastChild.parentNode.removeChild(lastChild.nextSibling);
+        }
     });
 
     function setInputValue(inputElement, value) {
@@ -99,6 +103,15 @@ describe('puElasticInput', function() {
             expect(element[0].offsetWidth).toBeGreaterThan(emptyElement[0].offsetWidth);
             setInputValue(element, '');
             expect(element[0].offsetWidth).toBe(emptyElement[0].offsetWidth);
+        });
+
+        it('is affected by the font size', function() {
+            var largeFontSizeElement = compileAndDigest('<input ng-model="l" pu-elastic-input style="font-size: 50px">');
+            var smallFontSizeElement = compileAndDigest('<input ng-model="s" pu-elastic-input>');
+            setInputValue(largeFontSizeElement, 'foobar');
+            setInputValue(smallFontSizeElement, 'foobar');
+            expect(largeFontSizeElement[0].offsetWidth).toBeGreaterThan(smallFontSizeElement[0].offsetWidth);
+            expect(largeFontSizeElement[0].clientWidth).toBeGreaterThan(largeFontSizeElement[0].scrollWidth);
         });
 
     });
