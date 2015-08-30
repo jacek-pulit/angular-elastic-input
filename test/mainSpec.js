@@ -106,12 +106,26 @@ describe('puElasticInput', function() {
         });
 
         it('is affected by the font size', function() {
-            var largeFontSizeElement = compileAndDigest('<input ng-model="l" pu-elastic-input style="font-size: 50px">');
+            var largeFontSizeElement =
+                compileAndDigest('<input ng-model="l" pu-elastic-input style="font-size: 50px">');
             var smallFontSizeElement = compileAndDigest('<input ng-model="s" pu-elastic-input>');
             setInputValue(largeFontSizeElement, 'foobar');
             setInputValue(smallFontSizeElement, 'foobar');
             expect(largeFontSizeElement[0].offsetWidth).toBeGreaterThan(smallFontSizeElement[0].offsetWidth);
             expect(largeFontSizeElement[0].clientWidth).toBeGreaterThan(largeFontSizeElement[0].scrollWidth);
+        });
+
+        it('takes into account the padding and border when box-sizing: border-box is used', function() {
+            var t, borderBoxElement, componentBoxElement;
+            t = '<input ng-model="bb" pu-elastic-input style="box-sizing: border-box;  padding: 50px; border: 20px solid black;">';
+            borderBoxElement = compileAndDigest(t);
+            t = '<input ng-model="cb" pu-elastic-input style="box-sizing: content-box; padding: 50px; border: 20px solid black;">';
+            componentBoxElement = compileAndDigest(t);
+
+            setInputValue(borderBoxElement, 'foobar');
+            setInputValue(componentBoxElement, 'foobar');
+
+            expect(borderBoxElement[0].offsetWidth).toBe(componentBoxElement[0].offsetWidth);
         });
 
     });
