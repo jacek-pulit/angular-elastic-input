@@ -128,5 +128,12 @@ describe('puElasticInput', function() {
             expect(borderBoxElement[0].offsetWidth).toBe(componentBoxElement[0].offsetWidth);
         });
 
+        it('increases when spaces are written', function() {
+            var element = compileAndDigest('<input ng-model="s" pu-elastic-input>');
+            var initialWidth = element[0].offsetWidth;
+            setInputValue(element, '      ');
+            expect(element[0].offsetWidth).toBeGreaterThan(initialWidth);
+        });
+
     });
 });
