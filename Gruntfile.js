@@ -1,5 +1,6 @@
 
 module.exports = function(grunt) {
+    'use strict';
 
     // Initial config
     var options = {

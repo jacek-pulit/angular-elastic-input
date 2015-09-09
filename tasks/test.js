@@ -2,10 +2,10 @@
 module.exports = function (grunt) {
     'use strict';
 
-    grunt.registerTask('dev', [
+    grunt.registerTask('test', [
 
         'jshint',
-        'watch'
+        'karma'
 
     ]);
 

@@ -1,7 +1,7 @@
 {
     "name": "angular-elastic-input",
     "description": "A directive for AngularJS which automatically resizes the width of input field according to the content, while typing.",
-    "version": "2.0.2",
+    "version": "2.1.1",
     "homepage": "https://github.com/jacek-pulit/angular-elastic-input",
     "keywords": ["elastic input", "autosize input", "autogrow input"],
     "license": "MIT License",
@@ -19,12 +19,16 @@
         ".gitignore",
         ".jshintrc",
         "Gruntfile.js",
+        "karma.conf.js",
         "package.json",
         "tasks",
-        "config"
+        "config",
+        "test"
     ],
     "dependencies": {
-        "jquery": ">=1.6.0",
         "angular": ">=1.0.6"
+    },
+    "devDependencies": {
+        "angular-mocks": ">=1.0.6"
     }
 }
