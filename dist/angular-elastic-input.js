@@ -51,6 +51,8 @@ angular.module('puElasticInput', []).directive('puElasticInput', [
     return {
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
+        // Disable trimming inputs by default
+        attrs.$set('ngTrim', attrs.ngTrim === 'true' ? 'true' : 'false');
         var mirror = angular.element('<span style="white-space:pre;"></span>');
         setMirrorStyle(mirror, element, attrs);
         wrapper.append(mirror);
