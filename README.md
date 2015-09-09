@@ -10,7 +10,7 @@ Download archive file above or install using bower:
 bower install angular-elastic-input --save
 ```
 
-Include the script tag on your page after the jQuery and AngularJS script tags:
+Include the script tag on your page after the AngularJS script tags:
 ```html
 <script src="path/to/angular-elastic-input.min.js"></script>
 ```
