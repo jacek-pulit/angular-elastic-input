@@ -9,6 +9,7 @@
     "autogrow input"
   ],
   "license": "MIT License",
+  "main": "dist/angular-elastic-input.js",
   "author": {
     "name": "Jacek Pulit",
     "email": "jacek.pulit@gmail.com"
