@@ -19,6 +19,7 @@ module.exports = function(config) {
         files: [
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
+            'node_modules/phantomjs-polyfill/bind-polyfill.js',
             'src/**/*.js',
             'test/**/*Spec.js'
         ],
