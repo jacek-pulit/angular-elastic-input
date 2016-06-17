@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Angular Elastic Input : A directive for AngularJS which automatically resizes the width of input field according to the content, while typing.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <title>Angular Elastic Input</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner">
+        <h1 id="project_title">Angular Elastic Input DEMO</h1>
+    </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer" ng-app="elasticInputApp">
+    <section id="main_content" class="inner" ng-controller="AppController">
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-6 control-label">Default</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" ng-model="model" pu-elastic-input/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 control-label">Model updates: <a href="" ng-click="updateModel()">click here</a></label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" ng-model="model" pu-elastic-input/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 control-label">Placeholder</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" ng-model="model" placeholder="placeholder" pu-elastic-input/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 control-label">inlune style: min-width:200px; <br/>max-width:400px;</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" ng-model="model" style="min-width:200px;max-width:400px;" pu-elastic-input/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 control-label"> attributes: pu-elastic-input-minwidth="300px" <br/>pu-elastic-input-maxwidth="none"</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" ng-model="model" pu-elastic-input-minwidth="300px" pu-elastic-input-maxwidth="none" pu-elastic-input/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 control-label">maxlength="8"</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" ng-model="model" pu-elastic-input maxlength="8" style="min-width:50px"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-6 control-label">with ng-model-options</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" ng-model="model" pu-elastic-input ng-model-options="{ updateOn: 'default' , debounce: { default : 500 } }"/>
+                </div>
+            </div>
+
+        </form>
+
+    </section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
+        <p class="copyright">Angular Elastic Input maintained by <a href="https://github.com/jacek-pulit">Jacek Pulit</a></p>
+        <p class="info">Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+    </footer>
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="../src/angular-elastic-input.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
