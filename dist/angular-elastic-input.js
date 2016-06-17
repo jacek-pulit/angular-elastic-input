@@ -53,20 +53,22 @@ angular.module('puElasticInput', []).directive('puElasticInput', [
       link: function postLink(scope, element, attrs) {
         // Disable trimming inputs by default
         attrs.$set('ngTrim', attrs.ngTrim === 'true' ? 'true' : 'false');
-        var mirror = angular.element('<span style="white-space:pre;"></span>');
+        // Initial value of mirror is null character what should trigger initial width update
+        var mirror = angular.element('<span style="white-space:pre;">&#000;</span>');
         setMirrorStyle(mirror, element, attrs);
         wrapper.append(mirror);
         function update() {
-          mirror.text(element.val() || attrs.placeholder || '');
+          var newValue = element.val() || attrs.placeholder || '';
+          // If new value is the same value as previous one there is no need to update the styling
+          if (mirror.text() == newValue)
+            return;
+          mirror.text(newValue);
           var delta = parseInt(attrs.puElasticInputWidthDelta) || 1;
           element.css('width', mirror.prop('offsetWidth') + delta + 'px');
         }
         update();
-        if (attrs.ngModel) {
-          scope.$watch(attrs.ngModel, update);
-        } else {
-          element.on('keydown keyup focus input propertychange change', update);
-        }
+        scope.$watch(attrs.ngModel, update);
+        element.on('keydown keyup focus input propertychange change', update);
         scope.$on('$destroy', function () {
           mirror.remove();
         });
