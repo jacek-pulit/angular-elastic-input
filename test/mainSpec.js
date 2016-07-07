@@ -135,5 +135,20 @@ describe('puElasticInput', function() {
             expect(element[0].offsetWidth).toBeGreaterThan(initialWidth);
         });
 
+        it('max width is set to outer element inner width', function(){
+            var element = compileAndDigest('<div style="width: 500px;"><input ng-model="s" pu-elastic-input></div>');
+            expect( element.find('input').css('max-width') ).toBe( '500px' );
+        });
+
+        it('max width is set to outer element inner width excluding padding', function(){
+            var element = compileAndDigest('<div style="width: 500px; padding: 0 10px 0 5px;"><input ng-model="s" pu-elastic-input></div>');
+            expect( element.find('input').css('max-width') ).toBe( '485px' );
+        });
+
+        it('max width is set to first outer block element inner width', function(){
+            var element = compileAndDigest('<div style="width: 500px; padding: 0 10px 0 5px;"><span><input ng-model="s" pu-elastic-input></span></div>');
+            expect( element.find('input').css('max-width') ).toBe( '485px' );
+        });
+
     });
 });
