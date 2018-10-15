@@ -1,4 +1,4 @@
-# Angular Elastic Input [![Build Status](https://travis-ci.org/jacek-pulit/angular-elastic-input.svg?branch=master)](https://travis-ci.org/jacek-pulit/angular-elastic-input)
+# Angular Elastic Input [![Build Status](https://travis-ci.org/jacek-pulit/angular-elastic-input.svg?branch=master)](https://travis-ci.org/jacek-pulit/angular-elastic-input) [![Greenkeeper badge](https://badges.greenkeeper.io/jacek-pulit/angular-elastic-input.svg)](https://greenkeeper.io/)
 
 A directive for AngularJS which automatically resizes the width of input field according to the content, while typing.
 
